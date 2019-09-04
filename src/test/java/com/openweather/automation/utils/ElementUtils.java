@@ -22,7 +22,11 @@ public class ElementUtils {
 	}
 	
 	
-	
+	/**
+	 * @param expectedElements
+	 * @return
+	 * @throws Exception
+	 */
 	public boolean verifyElementsDisplayedInPage(List<WebElement> expectedElements) throws Exception {
 		boolean status = false;
 		try {
@@ -55,6 +59,10 @@ public class ElementUtils {
 	}
 
 	
+	/**
+	 * @param element
+	 * @return
+	 */
 	public boolean verifyElementDisplayedOnPage(WebElement element)
 	{
 		try {
@@ -69,9 +77,4 @@ public class ElementUtils {
 			// TODO: handle exception
 		}
 	}
-	
-	/*
-	 * public void waitForPageLoad() { new
-	 * WebDriverWait(driver,10).until(ExpectedConditions.) }
-	 */
 }

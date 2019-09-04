@@ -13,11 +13,8 @@ import java.util.Date;
 
 public class ExtentReportUtil extends BaseUtil {
 
-	//String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-    //String fileName = reportLocation + "extentreport"+timeStamp+".html";
-    	 
-	 String fileName = reportLocation + "extentreport.html";
-
+	String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+    String fileName = reportLocation + "extentreport"+timeStamp+".html";
 
 	    public void ExtentReport() {
 	        //First is to create Extent Reports
@@ -25,7 +22,7 @@ public class ExtentReportUtil extends BaseUtil {
 
 	        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
 	        htmlReporter.config().setTheme(Theme.DARK);
-	        htmlReporter.config().setDocumentTitle("Test report for Selenium Basic");
+	        htmlReporter.config().setDocumentTitle("Test report for Open Weather");
 	        htmlReporter.config().setEncoding("utf-8");
 	        htmlReporter.config().setReportName("Test report");
 
@@ -37,7 +34,7 @@ public class ExtentReportUtil extends BaseUtil {
 
 	        File scr = ((TakesScreenshot)Driver).getScreenshotAs(OutputType.FILE);
 	        Files.copy(scr.toPath(), new File(reportLocation + "screenshot.png").toPath());
-	        scenarioDef.fail("details").addScreenCaptureFromPath(reportLocation + "screenshot.png");
+	        scenarioDef.fail("details").addScreenCaptureFromPath(reportLocation + "screenshot"+timeStamp+".png");
 	    }
 
 

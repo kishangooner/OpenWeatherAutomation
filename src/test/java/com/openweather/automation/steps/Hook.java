@@ -9,24 +9,28 @@ import com.openweather.automation.utils.BaseUtil;
 
 
 public class Hook extends BaseUtil{
-
+public static String scenarioName;
     @Before
     public void InitializeTest(Scenario scenario) {
     	scenarioDef = BaseUtil.features.createNode(scenario.getName());
-        System.out.println("Opening the browser : Chrome");
+    	scenarioName=scenario.getName();
+        System.out.println(scenarioName);
         System.setProperty("webdriver.chrome.driver",
         		  "D:\\Selenium\\chromedriver_win32\\chromedriver.exe"
         		  );
-        Driver = new ChromeDriver();
+        if (!scenario.getName().contains("api"))
+        	Driver = new ChromeDriver();
         openWeatherTestsHomePage=new OpenWeatherTestsHomePage(Driver);
         weatherInYourCityPage=new WeatherInYourCityPage(Driver);
     }
 
 
     @After
-    public void TearDownTest() {
+    public void TearDownTest() throws InterruptedException {
         System.out.println("Closing the browser : Chrome");
-        Driver.close();
+        if(Driver!=null)
+        	Driver.quit();
+        Thread.sleep(5000);
     }
 
 }

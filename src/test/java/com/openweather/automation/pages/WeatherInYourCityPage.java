@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.openweather.automation.utils.BaseUtil;
 import com.openweather.automation.utils.ElementUtils;
 
 public class WeatherInYourCityPage extends ElementUtils{
@@ -32,7 +33,7 @@ public class WeatherInYourCityPage extends ElementUtils{
 	
 	public void verifyCityNotFoundErrorMessage() {
 		if (verifyElementDisplayedOnPage(weatherInYourCityLabel) && verifyElementDisplayedOnPage(cityNotFoundMessage))
-			Assert.assertTrue(cityNotFoundMessage.getText().contains("Not found"));
+			Assert.assertTrue(cityNotFoundMessage.getText().contains("KaKA"));
 		else
 		{
 			Assert.fail(cityNotFoundMessage + "or" + weatherInYourCityLabel + "is not visisble");
@@ -40,9 +41,13 @@ public class WeatherInYourCityPage extends ElementUtils{
 		}
 	}
 
-	public void verifyCityWeatherDetails(String cityName) {
+	public void verifyCityWeatherDetails(String cityName) throws Exception {
 		if (verifyElementDisplayedOnPage(cityFoundText) && verifyElementDisplayedOnPage(weatherInYourCityLabel))
+		{
 			Assert.assertTrue(cityFoundText.getText().toLowerCase().contains(cityName.toLowerCase()));
+			cityFoundText.click();
+			BaseUtil.openWeatherTestsHomePage.verifyWeatherDetails(cityName);
+		}
 		else
 		{
 			Assert.fail(cityFoundText + "or" + weatherInYourCityLabel + "is not visisble");

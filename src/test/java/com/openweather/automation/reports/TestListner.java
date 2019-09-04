@@ -10,6 +10,8 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.gherkin.model.Feature;
+import com.openweather.automation.steps.Hook;
+import com.openweather.automation.utils.BaseUtil;
 
 
 
@@ -29,8 +31,10 @@ public class TestListner  implements ITestListener {
 		public void onTestFailure(ITestResult result) {
 			// TODO Auto-generated method stub
 			System.out.println("On Test Failure");
+			
 			try {
-				extentReportUtil.ExtentReportScreenshot();
+				if(!Hook.scenarioName.contains("api"))
+					extentReportUtil.ExtentReportScreenshot();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -50,13 +54,9 @@ public class TestListner  implements ITestListener {
 
 		public void onStart(ITestContext context) {
 			// TODO Auto-generated method stub
-			
 			 	System.out.println("On start");
-
 		        extentReportUtil.ExtentReport();
-
-		        //ToDo: Feature - Hard coding the feature name
-		        extentReportUtil.features = extentReportUtil.extent.createTest(Feature.class, "Login Feature");
+		        extentReportUtil.features = extentReportUtil.extent.createTest(Feature.class,"Open Weather Tests");
 			
 		}
 

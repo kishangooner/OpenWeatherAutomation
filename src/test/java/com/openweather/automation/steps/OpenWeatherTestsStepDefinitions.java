@@ -31,7 +31,7 @@ public static String city_Name;
   @When("^User searches \"([^\"]*)\" for weather details$")
   public void whenUserSearchescityNameForWeather(String cityName) throws ClassNotFoundException
   {
-	  scenarioDef.createNode(new GherkinKeyword("When"),"User searches \"([^\"]*)\" for weather details");
+	  scenarioDef.createNode(new GherkinKeyword("When"),"User searches"+cityName+" for weather details");
 	  openWeatherTestsHomePage.searchWeatherForCity(cityName);
   }
   
@@ -44,7 +44,7 @@ public static String city_Name;
   
   
   @Then("^Verifies that website successfully returns weather details$")
-  public void verifiesthatWebsiteSuccessfullyReturnsWeatherDetails() throws ClassNotFoundException
+  public void verifiesthatWebsiteSuccessfullyReturnsWeatherDetails() throws Exception
   {
 	  scenarioDef.createNode(new GherkinKeyword("Then"),"Verifies that website successfully returns weather details");
 	  weatherInYourCityPage.verifyCityWeatherDetails(city_Name);

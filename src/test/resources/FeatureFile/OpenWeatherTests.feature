@@ -2,7 +2,7 @@
 
 Feature: To perform end to end Tests on Open Weather Home page
 
-  @PositiveScenario
+  @Scenario
   Scenario: Verify all the information is dispalyed on Open Weather Home page
     Given Navigate to Open Weather home page
     Then Verify that all the webelements are dispalyed on Open Weather Home page
@@ -27,3 +27,15 @@ Feature: To perform end to end Tests on Open Weather Home page
   	Examples:
   	|cityName|
   	|Mumbai|
+  	
+  	@APIScenario
+  	Scenario Outline: Verifies the rest api
+  	When User submits the GET request "<parameter>"
+  	Then validate status code "<statusCode>"
+  	And validate the response content using "<jsonPath>"
+  	
+  	Examples:
+  	|parameter|statusCode|jsonPath|
+  	|London		|200			 |name		|
+  	
+  	

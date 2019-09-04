@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 5345704000,
+              "duration": 71390400,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 19,
-        "name": "Verifies that website suggests city is Not Found when we enter invalid city name.",
+        "line": 39,
+        "name": "Verifies the rest api",
         "description": "",
-        "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;;2",
+        "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api;;2",
         "after": [
           {
             "result": {
-              "duration": 2217737100,
+              "duration": 4998959200,
               "status": "passed"
             },
             "match": {
@@ -34,31 +34,19 @@
         "steps": [
           {
             "result": {
-              "duration": 58411626301,
+              "duration": 4914715899,
               "status": "passed"
             },
-            "line": 13,
-            "name": "Navigate to Open Weather home page",
-            "match": {
-              "location": "OpenWeatherTestsStepDefinitions.givenNavigatetoOpenWeatherhomepage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2934033100,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "User searches \"Lacazette\" for weather details",
+            "line": 33,
+            "name": "User submits the GET request \"London\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Lacazette",
-                  "offset": 15
+                  "val": "London",
+                  "offset": 30
                 }
               ],
-              "location": "OpenWeatherTestsStepDefinitions.whenUserSearchescityNameForWeather(String)"
+              "location": "APISteps.get_request(String)"
             },
             "matchedColumns": [
               0
@@ -67,21 +55,51 @@
           },
           {
             "result": {
-              "duration": 183662900,
+              "duration": 99584600,
               "status": "passed"
             },
-            "line": 15,
-            "name": "Verifies that website suggests city is Not Found Message",
+            "line": 34,
+            "name": "validate status code \"200\"",
             "match": {
-              "location": "OpenWeatherTestsStepDefinitions.verifiesthatWebsiteSuggestsCityIsNotFoundMessage()"
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 22
+                }
+              ],
+              "location": "APISteps.verify_status_code(int)"
             },
+            "matchedColumns": [
+              1
+            ],
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 651765200,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "validate the response content using \"name\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "name",
+                  "offset": 37
+                }
+              ],
+              "location": "APISteps.response_equals(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "line": 11,
-            "name": "@NegativeScenario"
+            "line": 31,
+            "name": "@APIScenario"
           }
         ]
       }

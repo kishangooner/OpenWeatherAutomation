@@ -1,5 +1,7 @@
 package com.openweather.automation.pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -96,4 +98,13 @@ public class OpenWeatherTestsHomePage extends ElementUtils{
 		
 	}
 	
+	public  void verifyWeatherDetails(String cityName) throws Exception
+	{
+		WebElement webElementArray[]= {cityNameLabel,temparatureLabel,weatherItemsLabel};
+		
+		if(verifyElementsDisplayedInPage(Arrays.asList(webElementArray)))
+			assertTrue(cityNameLabel.getText().toLowerCase().contains(cityName.toLowerCase()));
+		else 
+			Assert.fail("City Weather Details are not displayed");
+	}
 }

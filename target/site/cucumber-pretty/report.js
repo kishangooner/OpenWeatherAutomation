@@ -7,122 +7,144 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 12,
-  "name": "Verifies that website suggests city is Not Found when we enter invalid city name.",
+  "line": 32,
+  "name": "Verifies the rest api",
   "description": "",
-  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.",
+  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 11,
-      "name": "@NegativeScenario"
+      "line": 31,
+      "name": "@APIScenario"
     }
   ]
 });
 formatter.step({
-  "line": 13,
-  "name": "Navigate to Open Weather home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 14,
-  "name": "User searches \"\u003ccityName\u003e\" for weather details",
+  "line": 33,
+  "name": "User submits the GET request \"\u003cparameter\u003e\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 15,
-  "name": "Verifies that website suggests city is Not Found Message",
+  "line": 34,
+  "name": "validate status code \"\u003cstatusCode\u003e\"",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 35,
+  "name": "validate the response content using \"\u003cjsonPath\u003e\"",
+  "keyword": "And "
+});
 formatter.examples({
-  "line": 17,
+  "line": 37,
   "name": "",
   "description": "",
-  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;",
+  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api;",
   "rows": [
     {
       "cells": [
-        "cityName"
+        "parameter",
+        "statusCode",
+        "jsonPath"
       ],
-      "line": 18,
-      "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;;1"
+      "line": 38,
+      "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api;;1"
     },
     {
       "cells": [
-        "Lacazette"
+        "London",
+        "200",
+        "name"
       ],
-      "line": 19,
-      "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;;2"
+      "line": 39,
+      "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5345704000,
+  "duration": 71390400,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 19,
-  "name": "Verifies that website suggests city is Not Found when we enter invalid city name.",
+  "line": 39,
+  "name": "Verifies the rest api",
   "description": "",
-  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;;2",
+  "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-the-rest-api;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 11,
-      "name": "@NegativeScenario"
+      "line": 31,
+      "name": "@APIScenario"
     }
   ]
 });
 formatter.step({
-  "line": 13,
-  "name": "Navigate to Open Weather home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 14,
-  "name": "User searches \"Lacazette\" for weather details",
+  "line": 33,
+  "name": "User submits the GET request \"London\"",
   "matchedColumns": [
     0
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 15,
-  "name": "Verifies that website suggests city is Not Found Message",
+  "line": 34,
+  "name": "validate status code \"200\"",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "Then "
 });
+formatter.step({
+  "line": 35,
+  "name": "validate the response content using \"name\"",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
 formatter.match({
-  "location": "OpenWeatherTestsStepDefinitions.givenNavigatetoOpenWeatherhomepage()"
+  "arguments": [
+    {
+      "val": "London",
+      "offset": 30
+    }
+  ],
+  "location": "APISteps.get_request(String)"
 });
 formatter.result({
-  "duration": 58411626301,
+  "duration": 4914715899,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Lacazette",
-      "offset": 15
+      "val": "200",
+      "offset": 22
     }
   ],
-  "location": "OpenWeatherTestsStepDefinitions.whenUserSearchescityNameForWeather(String)"
+  "location": "APISteps.verify_status_code(int)"
 });
 formatter.result({
-  "duration": 2934033100,
+  "duration": 99584600,
   "status": "passed"
 });
 formatter.match({
-  "location": "OpenWeatherTestsStepDefinitions.verifiesthatWebsiteSuggestsCityIsNotFoundMessage()"
+  "arguments": [
+    {
+      "val": "name",
+      "offset": 37
+    }
+  ],
+  "location": "APISteps.response_equals(String)"
 });
 formatter.result({
-  "duration": 183662900,
+  "duration": 651765200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2217737100,
+  "duration": 4998959200,
   "status": "passed"
 });
 });
