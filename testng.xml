@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="10" >
+
+    <listeners>
+        <listener class-name="com.openweather.automation.reports.TestListner" />
+    </listeners>
+
+    <test name="Open Weather Test Automation">
+        <classes>
+            <class name="com.openweather.automation.testrunner.TestRunner" />
+        </classes>
+    </test>
+
+</suite>

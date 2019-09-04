@@ -1,0 +1,95 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5345704000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.InitializeTest(Scenario)"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Verifies that website suggests city is Not Found when we enter invalid city name.",
+        "description": "",
+        "id": "to-perform-end-to-end-tests-on-open-weather-home-page;verifies-that-website-suggests-city-is-not-found-when-we-enter-invalid-city-name.;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2217737100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.TearDownTest()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 58411626301,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Navigate to Open Weather home page",
+            "match": {
+              "location": "OpenWeatherTestsStepDefinitions.givenNavigatetoOpenWeatherhomepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2934033100,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User searches \"Lacazette\" for weather details",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Lacazette",
+                  "offset": 15
+                }
+              ],
+              "location": "OpenWeatherTestsStepDefinitions.whenUserSearchescityNameForWeather(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 183662900,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Verifies that website suggests city is Not Found Message",
+            "match": {
+              "location": "OpenWeatherTestsStepDefinitions.verifiesthatWebsiteSuggestsCityIsNotFoundMessage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@NegativeScenario"
+          }
+        ]
+      }
+    ],
+    "name": "To perform end to end Tests on Open Weather Home page",
+    "description": "",
+    "id": "to-perform-end-to-end-tests-on-open-weather-home-page",
+    "keyword": "Feature",
+    "uri": "OpenWeatherTests.feature"
+  }
+]
