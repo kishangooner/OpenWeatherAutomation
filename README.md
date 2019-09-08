@@ -13,7 +13,9 @@ The framework has following features
 5. Different page classes to handle web component such as (Button,Link etc)
 6. Centralized Configuration (Using Properties file)
 7. POM
-8. Hooks for different browser support
+8. Hooks for performing operations before and after scenarios
+9. Screenshots of failed scenarios
+10. REST API Automation using BDD-RestAssured
 
 
 ### Add the Feature file 
