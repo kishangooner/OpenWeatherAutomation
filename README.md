@@ -84,5 +84,10 @@ Or run the below command from cmd
 
 ![Extent Report](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/ExtentReport.png)
 
+### Jenkins
+
+![Jenkins Build](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/Jenkins2.png)
+
+![Jenkins Console Output](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/Jenkins1.png)
 
 
