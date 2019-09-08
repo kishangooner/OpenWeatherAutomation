@@ -1,5 +1,5 @@
 # OpenWeatherAutomation
-<<<<<<< HEAD
+
 ### Selenium Framework with Cucumber
 
 BDD framework for automation using Selenium Cucumber and TestNg
@@ -80,12 +80,7 @@ Or run the below command from cmd
 
 ### Extent Report
 
-There is a feature overview page:
+![Extent Report](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/extentreport2019.09.08.16.58.03.html)
 
 
-
-![feature overview page](https://github.com/damianszczepanik/cucumber-reporting/raw/master/.README/feature-overview.png)
-
-=======
->>>>>>> Created new folder for reports and logs
 
