@@ -80,7 +80,7 @@ Or run the below command from cmd
 
 ### Extent Report
 
-![Extent Report](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/extentreport2019.09.08.16.58.03.html)
+![Extent Report](https://github.com/kishangooner/OpenWeatherAutomation/blob/master/src/test/resources/extent-reports/ExtentReport.png)
 
 
 
