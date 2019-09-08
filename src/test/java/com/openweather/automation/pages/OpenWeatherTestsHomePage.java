@@ -92,6 +92,7 @@ public class OpenWeatherTestsHomePage extends ElementUtils{
 		{
 			searchCityNameTxt.sendKeys(cityName);
 			submitCityNameBtn.click();
+			log.info("Successfully Clicked on City Name");
 		}
 		else
 			log.error(searchCityNameTxt+"or"+searchWeatherinCityBtn+"webelement is not visible on the page");

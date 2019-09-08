@@ -14,11 +14,7 @@ public class BaseUtil {
     public static OpenWeatherTestsHomePage openWeatherTestsHomePage;
     public static WeatherInYourCityPage weatherInYourCityPage;
     public ExtentReports extent;
-
     public static ExtentTest scenarioDef;
-
     public static ExtentTest features;
-
-    public static String reportLocation = "D:\\Selenium";
-
+    
 }

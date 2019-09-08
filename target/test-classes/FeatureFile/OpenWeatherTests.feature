@@ -2,7 +2,7 @@
 
 Feature: To perform end to end Tests on Open Weather Home page
 
-  @Scenario
+  @PositiveScenario
   Scenario: Verify all the information is dispalyed on Open Weather Home page
     Given Navigate to Open Weather home page
     Then Verify that all the webelements are dispalyed on Open Weather Home page

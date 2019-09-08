@@ -1,4 +1,5 @@
 # OpenWeatherAutomation
+<<<<<<< HEAD
 ### Selenium Framework with Cucumber
 
 BDD framework for automation using Selenium Cucumber and TestNg
@@ -85,4 +86,6 @@ There is a feature overview page:
 
 ![feature overview page](https://github.com/damianszczepanik/cucumber-reporting/raw/master/.README/feature-overview.png)
 
+=======
+>>>>>>> Created new folder for reports and logs
 

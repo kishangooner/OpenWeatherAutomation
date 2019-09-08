@@ -6,6 +6,7 @@ import cucumber.api.Scenario;
 import com.openweather.automation.pages.OpenWeatherTestsHomePage;
 import com.openweather.automation.pages.WeatherInYourCityPage;
 import com.openweather.automation.utils.BaseUtil;
+import com.openweather.automation.utils.ConstantData;
 
 
 public class Hook extends BaseUtil{
@@ -16,7 +17,7 @@ public static String scenarioName;
     	scenarioName=scenario.getName();
         System.out.println(scenarioName);
         System.setProperty("webdriver.chrome.driver",
-        		  "D:\\Selenium\\chromedriver_win32\\chromedriver.exe"
+        		  ConstantData.CHROMEDRIVER_PATH
         		  );
         if (!scenario.getName().contains("api"))
         	Driver = new ChromeDriver();

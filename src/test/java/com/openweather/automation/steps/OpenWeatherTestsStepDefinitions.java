@@ -7,6 +7,7 @@ import com.aventstack.extentreports.GherkinKeyword;
 import com.openweather.automation.pages.OpenWeatherTestsHomePage;
 import com.openweather.automation.pages.WeatherInYourCityPage;
 import com.openweather.automation.utils.BaseUtil;
+import com.openweather.automation.utils.ConstantData;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -18,7 +19,7 @@ public static String city_Name;
   @Given("^Navigate to Open Weather home page$")
   public void givenNavigatetoOpenWeatherhomepage() throws ClassNotFoundException{
 	  scenarioDef.createNode(new GherkinKeyword("Given"),"Navigate to Open Weather home page");
-	  Driver.get("https://openweathermap.org/");
+	  Driver.get(ConstantData.BASE_URL);
 	  Driver.manage().window().maximize();
   }
 

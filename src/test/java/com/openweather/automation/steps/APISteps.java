@@ -12,6 +12,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.GherkinKeyword;
 import com.jayway.jsonpath.JsonPath;
 import com.openweather.automation.utils.BaseUtil;
+import com.openweather.automation.utils.ConstantData;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.testng.Assert.assertEquals;
@@ -33,15 +34,14 @@ public class APISteps extends BaseUtil{
 	private Response response;
 	private ValidatableResponse json;
 	private RequestSpecification request;
-    private String URI = "https://samples.openweathermap.org/data/2.5/weather?appid=b6907d289e10d714a6e88b30761fae22";
+    
  
 	@Given("^User submits the GET request \"([^\\\"]*)\"$")
 	public void get_request(String cityName) throws ClassNotFoundException{
 		scenarioDef.createNode(new GherkinKeyword("Given"),"User submits the GET request"+cityName);
 		this.cityName=cityName;
 		request = RestAssured.given().param("q", cityName);
-		response = request.when().get(URI);
-		System.out.println("response: " + response.prettyPrint());
+		response = request.when().get(ConstantData.URI);
 	}
  
 	@Then("^validate status code \"([^\\\"]*)\"$")
@@ -56,13 +56,4 @@ public class APISteps extends BaseUtil{
 		scenarioDef.createNode(new GherkinKeyword("Then"),"validate the response content using "+jsonPath);
 		response.then().assertThat().body(jsonPath,is(cityName));
 	}
-	
-	
-
-	@Then("^validate header parameter in response$")
-	public void validate_header_parameter_in_response() throws InterruptedException, ClassNotFoundException {
-		scenarioDef.createNode(new GherkinKeyword("Then"),"validate header parameter in response");
-		response.then().assertThat().header("Content-Type","application/json; charset=utf-8");
-	}
-
 }
